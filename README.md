@@ -1,6 +1,6 @@
 #  BLOCKCHAIN-BASED DIGITAL EVIDENCE MANAGEMENT SYSTEM
 
-**A Secure and Tamper-Evident Digital Evidence Management Application**
+**A Blockchain-Inspired and Tamper-Evident Digital Evidence Management Application**
 
 A Python-based web application designed to manage digital forensic evidence through cryptographic hashing and blockchain-inspired data integrity mechanisms.
 
@@ -61,11 +61,10 @@ This project provides a centralized platform for uploading, documenting, trackin
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd YOUR_PROJECT_FOLDER
+git clone https://github.com/dteresaleeser24-11/Blockchain-Digital-Evidence-System.git
+cd Blockchain-Digital-Evidence-System
 ```
 
-Replace the repository URL and folder name with your actual details.
 
 ### 2. Create a Virtual Environment
 
@@ -131,4 +130,4 @@ These hashes are stored in hash-linked records, allowing the application to iden
 
 Developed as a Digital Forensics and Cybersecurity project to demonstrate the practical application of cryptographic hashing, evidence management, and blockchain concepts.
 
-**Project Domain:** Cybersecurity | Digital Forensics | Blockchain Technology
+**Project Domain:** Cybersecurity , Digital Forensics , Blockchain Technology
