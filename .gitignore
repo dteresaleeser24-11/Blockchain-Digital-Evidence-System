@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+
+evidence.db
+evidence/*
+!evidence/.gitkeep
+
+blockchain.json
