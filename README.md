@@ -1,4 +1,4 @@
-# 🔐 BLOCKCHAIN-BASED DIGITAL EVIDENCE MANAGEMENT SYSTEM
+#  BLOCKCHAIN-BASED DIGITAL EVIDENCE MANAGEMENT SYSTEM
 
 **A Secure and Tamper-Evident Digital Evidence Management Application**
 
@@ -8,13 +8,13 @@ The system records evidence details, generates unique SHA-256 fingerprints, and 
 
 ---
 
-## 📌 PROJECT OVERVIEW
+##  PROJECT OVERVIEW
 
 Digital evidence must be preserved carefully to prevent unauthorized modification or loss of integrity.
 
 This project provides a centralized platform for uploading, documenting, tracking, and verifying digital evidence. It combines a Flask-based web interface, SHA-256 cryptographic hashing, SQLite storage, and a JSON-based hash-linked blockchain.
 
-## ⚙️ CORE CAPABILITIES
+##  CORE CAPABILITIES
 
 | Feature | Description |
 |---|---|
@@ -28,7 +28,7 @@ This project provides a centralized platform for uploading, documenting, trackin
 
 ---
 
-## 🔄 SYSTEM WORKFLOW
+##  SYSTEM WORKFLOW
 
 1. **Evidence Submission** – The investigator uploads a digital evidence file.
 2. **Metadata Collection** – Case ID, investigator name, and description are recorded.
@@ -39,7 +39,7 @@ This project provides a centralized platform for uploading, documenting, trackin
 
 ---
 
-## 🛠️ TECHNOLOGY STACK
+##  TECHNOLOGY STACK
 
 - **Programming Language:** Python
 - **Web Framework:** Flask
@@ -50,7 +50,7 @@ This project provides a centralized platform for uploading, documenting, trackin
 
 ---
 
-## 💻 INSTALLATION & CONFIGURATION
+##  INSTALLATION & CONFIGURATION
 
 ### Prerequisites
 
@@ -93,7 +93,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ EXECUTION
+##  EXECUTION
 
 Start the Flask application:
 
@@ -107,7 +107,7 @@ Once the application starts, access it through your browser:
 
 ---
 
-## 🎯 PROJECT OBJECTIVES
+##  PROJECT OBJECTIVES
 
 - Maintain the integrity of digital forensic evidence.
 - Apply cryptographic hashing for file verification.
@@ -117,7 +117,7 @@ Once the application starts, access it through your browser:
 
 ---
 
-## 🔒 SECURITY & INTEGRITY
+##  SECURITY & INTEGRITY
 
 The application uses SHA-256 hashing to generate a digital fingerprint for each evidence file.
 
@@ -127,7 +127,7 @@ These hashes are stored in hash-linked records, allowing the application to iden
 
 ---
 
-## 👩‍💻 DEVELOPMENT
+##  DEVELOPMENT
 
 Developed as a Digital Forensics and Cybersecurity project to demonstrate the practical application of cryptographic hashing, evidence management, and blockchain concepts.
 
