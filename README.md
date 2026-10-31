@@ -1,322 +1,88 @@
+Blockchain Evidence System
 
+A Flask application for recording digital evidence, generating SHA-256 file hashes, and storing evidence metadata in a simple hash-linked blockchain.
 
-\# Blockchain-Based Digital Evidence Integrity System
 
 
+Features
 
-A Python Flask-based application designed to maintain the integrity and traceability of digital evidence using SHA-256 cryptographic hashing and a hash-linked blockchain structure.
+Upload evidence with a case ID, investigator, and description
 
+Generate a SHA-256 hash for each uploaded file
 
+Append evidence hashes to blockchain.json
 
-\## Project Overview
+Store searchable evidence metadata in a local SQLite database
 
+Verify whether a file matches its stored hash
 
+View the blockchain and download its JSON representation
 
-Digital evidence such as documents, images, videos, and other electronic files must maintain their integrity during investigation and examination.
+Requirements
 
+Python 3.10 or newer
 
+Flask
 
-This project provides a system to upload digital evidence, generate unique SHA-256 hashes, record evidence metadata, and verify whether evidence has been modified.
+Setup
 
+Create and activate a virtual environment, then install Flask:
 
 
-The application uses a blockchain-inspired structure in which each block is linked to the previous block using cryptographic hashes.
 
-
-
-\## Key Features
-
-
-
-\- Digital evidence upload
-
-\- SHA-256 hash generation
-
-\- Blockchain-based evidence records
-
-\- Previous hash and current hash linking
-
-\- Evidence integrity verification
-
-\- Case ID-based evidence search
-
-\- Investigator and case information management
-
-\- SQLite database integration
-
-\- Flask-based web interface
-
-
-
-\## Technologies Used
-
-
-
-| Technology | Purpose |
-
-|---|---|
-
-| Python | Application development |
-
-| Flask | Web application framework |
-
-| SHA-256 | Digital evidence hashing |
-
-| SQLite | Database management |
-
-| HTML | Web page structure |
-
-| CSS | User interface styling |
-
-| Git \& GitHub | Version control and source code hosting |
-
-
-
-\## How It Works
-
-
-
-1\. The investigator enters case details.
-
-2\. Digital evidence is uploaded through the web interface.
-
-3\. The system calculates the SHA-256 hash of the uploaded file.
-
-4\. Evidence metadata and hash information are recorded.
-
-5\. A new block is created with its index, timestamp, filename, file hash, previous hash, and current hash.
-
-6\. The blockchain structure links the new block to the previous block.
-
-7\. Evidence integrity can be checked by comparing its current hash with the recorded hash.
-
-
-
-\## Blockchain Structure
-
-
-
-Each block contains:
-
-
-
-\- Index
-
-\- Timestamp
-
-\- Filename
-
-\- File Hash
-
-\- Previous Hash
-
-\- Current Hash
-
-
-
-The previous hash connects each block to its predecessor, helping detect changes to the recorded chain.
-
-
-
-\## Project Structure
-
-
-
-```text
-
-Blockchain-Digital-Evidence-System/
-
-│
-
-├── app.py
-
-├── blockchain.py
-
-├── database.py
-
-├── hashing.py
-
-├── requirements.txt
-
-├── .gitignore
-
-├── README.md
-
-│
-
-├── templates/
-
-│   ├── base.html
-
-│   ├── index.html
-
-│   ├── evidence.html
-
-│   ├── blockchain.html
-
-│   ├── search.html
-
-│   └── verify.html
-
-│
-
-├── static/
-
-│
-
-└── evidence/
-
-```
-
-
-
-\## Installation and Setup
-
-
-
-\### 1. Clone the repository
-
-
-
-```bash
-
-git clone https://github.com/dteresaleeser24-11/Blockchain-Digital-Evidence-System.git
-
-```
-
-
-
-\### 2. Navigate to the project folder
-
-
-
-```bash
-
-cd Blockchain-Digital-Evidence-System
-
-```
-
-
-
-\### 3. Create a virtual environment
-
-
-
-```bash
-
-python -m venv venv
-
-```
-
-
-
-\### 4. Activate the virtual environment
-
-
+python -m venv .venv
 
 Windows PowerShell:
 
 
 
-```powershell
+.\\.venv\\Scripts\\Activate.ps1
 
-.\\venv\\Scripts\\Activate.ps1
-
-```
+macOS/Linux:
 
 
 
-\### 5. Install dependencies
+source .venv/bin/activate
 
+pip install Flask
 
-
-```bash
-
-pip install -r requirements.txt
-
-```
-
-
-
-\### 6. Run the application
-
-
-
-```bash
+Run
 
 python app.py
 
-```
+Open http://127.0.0.1:5000 in a browser.
 
 
 
-\### 7. Open in your browser
+Routes
+
+Route	Purpose
+
+/	Upload evidence and view totals
+
+/evidence	View stored evidence records
+
+/verify	Verify an evidence file against its stored hash
+
+/search	Search records by case ID
+
+/blockchain	View the hash-linked blockchain
+
+/download	Download blockchain.json
+
+Data files
+
+blockchain.json stores the hash-linked chain.
+
+evidence.db is created locally by SQLite when the app starts.
+
+Uploaded files are stored in evidence/.
+
+The repository excludes the local database, uploaded evidence, and Python cache files through .gitignore. Do not commit confidential evidence or production data.
 
 
 
-http://127.0.0.1:5000
+Note
 
-
-
-\## Security and Evidence Integrity
-
-
-
-SHA-256 is used to generate a cryptographic hash for each digital evidence file.
-
-
-
-The hash-linked block structure helps identify modifications to recorded evidence or blockchain records.
-
-
-
-\*\*Note:\*\* This is an educational blockchain-based integrity prototype. It is not a distributed blockchain network or a replacement for a production digital evidence management system. Proper access controls, secure storage, backups, and independent verification are necessary for real forensic investigations.
-
-
-
-\## Future Enhancements
-
-
-
-\- User authentication and role-based access control
-
-\- Authorized investigator management
-
-\- Evidence access audit logs
-
-\- Improved evidence verification
-
-\- Digital signature integration
-
-\- Secure evidence storage
-
-\- Dashboard and reporting features
-
-\- Deployment to a secure hosting environment
-
-
-
-\## Author
-
-
-
-\*\*Teresa Leeser Dake\*\*
-
-
-
-M.Sc. Cyber Security \& Law
-
-
-
-GitHub: https://github.com/dteresaleeser24-11
-
-
-
-\---
-
-
-
-Developed as a cybersecurity and digital forensics academic project.
-
-
+This is an educational project. Before using it for real investigations, add authentication, authorization, secure file handling, input validation, audit logging, encrypted storage, and a production database.
 
