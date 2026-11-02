@@ -90,6 +90,16 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+## 🚀 Live Demo
+
+Explore the deployed application:
+
+🔗 **Live Website:** https://blockchain-digital-evidence-system.onrender.com
+
+📂 **GitHub Repository:** https://github.com/dteresaleeser24-11/Blockchain-Digital-Evidence-System
+
+> Note: The live demo uses temporary storage. Uploaded test evidence and records may not persist after service restarts or redeployments. Please use dummy files only.
+
 ---
 
 ##  EXECUTION
