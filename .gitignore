@@ -6,3 +6,11 @@ evidence/*
 !evidence/.gitkeep
 
 blockchain.json
+# Local backups and test files
+*_backup.py
+sample_evidence.txt
+
+# Environment and virtual environment files
+.env
+.venv/
+venv/

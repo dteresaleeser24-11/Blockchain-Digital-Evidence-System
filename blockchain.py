@@ -1,3 +1,4 @@
+
 import hashlib
 import json
 import os
@@ -7,14 +8,24 @@ from datetime import datetime
 class Blockchain:
 
     def __init__(self):
+        self.chain_file = os.path.join(
+            os.environ.get("APP_DATA_DIR", "."),
+            "blockchain.json"
+        )
+
+        os.makedirs(
+            os.path.dirname(os.path.abspath(self.chain_file)),
+            exist_ok=True
+        )
+
         self.chain = []
         self.load_chain()
 
     def load_chain(self):
 
-        if os.path.exists("blockchain.json"):
+        if os.path.exists(self.chain_file):
 
-            with open("blockchain.json", "r") as file:
+            with open(self.chain_file, "r") as file:
 
                 try:
                     self.chain = json.load(file)
@@ -27,7 +38,7 @@ class Blockchain:
 
     def save_chain(self):
 
-        with open("blockchain.json", "w") as file:
+        with open(self.chain_file, "w") as file:
             json.dump(self.chain, file, indent=4)
 
     def create_genesis_block(self):
@@ -52,7 +63,10 @@ class Blockchain:
         if "current_hash" in block_copy:
             del block_copy["current_hash"]
 
-        block_string = json.dumps(block_copy, sort_keys=True).encode()
+        block_string = json.dumps(
+            block_copy,
+            sort_keys=True
+        ).encode()
 
         return hashlib.sha256(block_string).hexdigest()
 

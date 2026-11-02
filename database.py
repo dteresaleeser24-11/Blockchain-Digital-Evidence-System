@@ -1,7 +1,15 @@
+import os
 import sqlite3
 
-DATABASE = "evidence.db"
+DATABASE = os.path.join(
+    os.environ.get("APP_DATA_DIR", "."),
+    "evidence.db"
+)
 
+os.makedirs(
+    os.path.dirname(os.path.abspath(DATABASE)),
+    exist_ok=True
+)
 
 def connect_db():
     return sqlite3.connect(DATABASE)
